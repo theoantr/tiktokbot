@@ -1,21 +1,26 @@
 # TikTok Bot Automation 🤖
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![License: MIT](https://img.shields.io/github/license/theoantr/tiktokbot.svg?color=green)
-![GitHub repo size](https://img.shields.io/github/repo-size/theoantr/tiktokbot.svg)
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue?logo=python&logoColor=white)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/theoantr/tiktokbot)](https://github.com/theoantr/tiktokbot/releases)
 
-A Selenium-based bot for automating TikTok interactions (likes, shares, views) while avoiding detection.
+A Selenium-based bot for automating TikTok interactions while avoiding detection.
+
+<img src="https://img.shields.io/badge/chrome-required-red?logo=google-chrome" alt="Chrome Required">
 
 ## Features ✨
-- ✅ Automated likes, shares, and views
-- 🕵️‍♂️ Bypasses bot detection with stealth techniques
-- ⏱️ Configurable random delays between actions
-- 🔄 Multiple service support (followers, hearts, etc.)
-- 📊 Progress tracking and logging
+- 🚀 **Automated Actions**: Likes, shares, views, follows
+- 🛡️ **Stealth Mode**: Built-in anti-detection techniques
+- ⚙️ **Easy Configuration**: Customizable delays and settings
+- 📈 **Multiple Services**: Supports all major TikTok interactions
 
-## Installation 🛠️
-
-1. Clone the repository:
+## Installation
 ```bash
+# Clone with HTTPS
 git clone https://github.com/theoantr/tiktokbot.git
+
+# Or with SSH (recommended)
+git clone git@github.com:theoantr/tiktokbot.git
+
 cd tiktokbot
+pip install -r requirements.txt
