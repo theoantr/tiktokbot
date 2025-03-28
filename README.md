@@ -2,7 +2,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue?logo=python&logoColor=white)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/theoantr/tiktokbot)](https://github.com/theoantr/tiktokbot/releases)
+
 
 A Selenium-based bot for automating TikTok interactions while avoiding detection.
 
