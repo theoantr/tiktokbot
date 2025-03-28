@@ -3,7 +3,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue?logo=python&logoColor=white)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Stars](https://img.shields.io/github/stars/theoantr/tiktokbot?style=social)](https://github.com/theoantr/tiktokbot/stargazers)
-[![Open Issues](https://img.shields.io/github/issues/theoantr/tiktokbot)](https://github.com/theoantr/tiktokbot/issues)
+
 
 A complete automation solution for TikTok growth, using advanced Selenium techniques to safely automate interactions.
 
