@@ -8,9 +8,10 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
+
 
 class Bot:
     def __init__(self):
@@ -23,18 +24,18 @@ class Bot:
         print("[~] Opening Zefoy... (Complete CAPTCHA manually if needed)")
         self.driver.get("https://zefoy.com")
         
-        # Wait for manual CAPTCHA solve
-        self._wait_for_element(By.LINK_TEXT, "Youtube")
-        print("[+] CAPTCHA solved! Proceeding...")
-        
-        sleep(random.uniform(2, 5))
-        self.driver.refresh()
-        sleep(random.uniform(2, 5))
-        self.driver.refresh()
+        # Wait for CAPTCHA to be solved
+        if self._wait_for_captcha_to_solve():
+            print("[+] CAPTCHA solved! Proceeding...")
+        else:
+            print("[x] CAPTCHA solving timeout. Exiting...")
+            self.driver.quit()
+            return
         
         self._check_services_status()
         self.driver.minimize_window()
         self._print_services_list()
+
         service = self._choose_service()
         video_url = self._choose_video_url()
         self._start_service(service, video_url)
@@ -85,14 +86,38 @@ class Bot:
             except NoSuchElementException:
                 self.services[service]["status"] = "[OFFLINE]"
 
-    def _wait_for_element(self, by, value, timeout=30):
-        """Waits for an element to be present and returns it."""
+    def _wait_for_captcha_to_solve(self, timeout=120):
+        """
+        Wait for CAPTCHA to be solved. Return True if solved, False otherwise.
+        """
         try:
-            return WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located((by, value)))
-        except Exception:
-            print(f"[!] Timeout: Element {value} not found!")
-            self.driver.quit()
-            exit(1)
+            WebDriverWait(self.driver, timeout).until(
+                EC.invisibility_of_element_located((By.XPATH, "//div[contains(@class, 'captcha-box')]"))
+            )
+            return True
+        except TimeoutException:
+            return False
+
+    def _print_services_list(self):
+        print("\nAvailable Services:")
+        for service, details in self.services.items():
+            print(f" - {details['title']}: {details['status']}")
+
+    def _choose_service(self):
+        service_keys = list(self.services.keys())
+        print("\nSelect a service:")
+        for i, key in enumerate(service_keys, 1):
+            print(f"{i}. {self.services[key]['title']}")
+        choice = int(input("Enter the number of your choice: "))
+        return service_keys[choice - 1]
+
+    def _choose_video_url(self):
+        return input("Enter the video URL: ")
+
+    def _start_service(self, service, video_url):
+        print(f"\nStarting {self.services[service]['title']} service for video: {video_url}")
+        # Add logic to interact with the specific service
+
 
 if __name__ == "__main__":
     bot = Bot()
