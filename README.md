@@ -24,6 +24,9 @@ git clone git@github.com:theoantr/tiktokbot.git
 
 cd tiktokbot
 pip install -r requirements.txt
+
+
+
 🚀 Quick Start
 Run the bot:
 
