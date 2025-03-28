@@ -4,15 +4,16 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20Mac-lightgrey)
 
+<img src="https://i.imgur.com/JbG5mYz.gif" width="600" alt="TikTok Bot Demo">
 
 ## 📌 Table of Contents
-- [Features](#-features)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [Troubleshooting](#-troubleshooting)
-- [Disclaimer](#-disclaimer)
-- [License](#-license)
+- [Features](#features)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+- [Disclaimer](#disclaimer)
+- [License](#license)
 
 ## 🌟 Features
 | Feature | Description |
@@ -23,7 +24,7 @@
 | 🔄 Auto-Retry | Automatic error recovery system |
 | 📈 Analytics | Detailed performance logging |
 
-## 🛠 Installation
+## 🛠 Installation <a name="installation"></a>
 
 ### Prerequisites
 - Python 3.8+
